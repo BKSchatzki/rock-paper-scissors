@@ -14,14 +14,19 @@ function getComputerChoice() {
     }   else {
         return "Scissors";
     }
-    // log console for testing
 }
 
+// declare computerSelection variable and assign getComputerChoice() as value
 let computerSelection = getComputerChoice();
+
+// log console for testing
 console.log(computerSelection);
 
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
+    // assign playerSelection to value of prompt
+        // make case insensitive
+        // if player selection isn't proper, reprompt, emphasizing three choices
 
 
 
