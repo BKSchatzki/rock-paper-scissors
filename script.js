@@ -1,5 +1,3 @@
-let playerSelection;
-
 // declare function getComputerChoice() to randomly return Rock, Paper, or Scissors
 function getComputerChoice() {
     // select random number between 0 and 1
@@ -18,15 +16,27 @@ function getComputerChoice() {
 
 // declare computerSelection variable and assign getComputerChoice() as value
 let computerSelection = getComputerChoice();
-
 // log console for testing
 console.log(computerSelection);
 
+// declare function getPlayerChoice() and prompt player to type choice
+function getPlayerChoice() {
+    let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?")
+    // make case insensitive
+    // if player selection isn't proper, reprompt, emphasizing three choices
+    if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
+        return playerInput;
+    } else {
+        alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'")
+    }
+}
+
+// declare playerSeletion variable and assign getPlayerChoice() as value
+let playerSelection = getPlayerChoice();
+// log console for testing
+console.log(playerSelection);
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
-    // assign playerSelection to value of prompt
-        // make case insensitive
-        // if player selection isn't proper, reprompt, emphasizing three choices
 
 
 
