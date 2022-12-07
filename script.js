@@ -63,6 +63,7 @@ for (let round = 0;  round < 5; round++) {
         // if variables are the same, say it's a tie and what was picked
         // if player wins, say so and what was picked
         // if computer wins, say so and what was picked
+        // increment score variable depending on who won
     function playRound() {
         if (playerSelection === null) {
             console.log("You aborted the round! The computer gets a point!");
@@ -88,13 +89,21 @@ for (let round = 0;  round < 5; round++) {
     console.log(playRound());
 
     // add scoring tracker
-        // TODO: check and say winner when one reaches three
-    if (computerScore === playerScore) {
-        console.log(`You and the computer are tied at ${playerScore} apiece!`)
+        // check and say winner when one reaches three, then break the loop
+        // TODO: add and honor singular or plural noun "point" in winner message
+        // TODO: add unique message for each possible final result
+    if (playerScore === 3) {
+        console.log(`And with 3, you win the best-of-five! The computer's score is only ${computerScore}.`);
+        break;
+    } else if (computerScore === 3) {
+        console.log(`With 3 points, the computer wins the best of five. Your score is only ${playerScore}.`);
+        break;
+    } else if (computerScore === playerScore) {
+        console.log(`You and the computer are tied at ${playerScore} apiece!`);
     } else if (computerScore < playerScore) {
-        console.log(`You are ahead! The score is ${playerScore} to ${computerScore}.`)
+        console.log(`You are ahead! The score is ${playerScore} to ${computerScore}.`);
     } else if (playerScore < computerScore) {
-        console.log(`You are behind! The score is ${playerScore} to ${computerScore}.`)
+        console.log(`You are behind! The score is ${playerScore} to ${computerScore}.`);
     }
 
 }
