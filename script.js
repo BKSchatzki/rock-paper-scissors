@@ -20,9 +20,9 @@ console.log(computerSelection);
 // prompt player for choice
     // use while-loop to continually prompt player until proper choice is made
     // if player cancels, return null and break
-    // if player inputs "Rock"," "Paper," or "Scissors," return input and break
+    // if player inputs "Rock"," "Paper," or "Scissors," check if converted to lowercase the strings match "rock," paper," or "scissors"
+    // if true, return string, with only first letter capitalized
     // if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
-    // TODO: make player input case-insensitive
 function getPlayerChoice() {
     while(true) {
     let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
@@ -31,10 +31,10 @@ function getPlayerChoice() {
             break;
         }
         else if (
-            playerInput === "Rock" ||
-            playerInput === "Paper" ||
-            playerInput === "Scissors") {
-                return playerInput;
+            playerInput.toLowerCase() === "rock" ||
+            playerInput.toLowerCase() === "paper" ||
+            playerInput.toLowerCase() === "scissors") {
+                return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
                 break;
         } else {
             alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
