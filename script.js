@@ -21,16 +21,19 @@ console.log(computerSelection);
 
 // declare function getPlayerChoice() and prompt player to type choice
 function getPlayerChoice() {
+    while(true) {
     let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
     // make case insensitive
     // if player selection isn't proper, reprompt, emphasizing three choices
-    if (
-        playerInput === "Rock" ||
-        playerInput === "Paper" ||
-        playerInput === "Scissors") {
-            return playerInput;
-    } else {
-        alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
+        if (
+            playerInput === "Rock" ||
+            playerInput === "Paper" ||
+            playerInput === "Scissors") {
+                return playerInput;
+                break;
+        } else {
+            alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
+        }
     }
 }
 
