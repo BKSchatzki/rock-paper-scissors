@@ -36,7 +36,12 @@ function getPlayerChoice() {
             }
         }
     }
-    
+
+// declare score variables
+    // TODO: place inside function play to "Play again" if so desired
+let computerScore
+let playerScore
+
 for (let round = 0;  round < 5; round++) {
 
     // initialize variable computerSelection with value of function getComputerChoice
@@ -48,6 +53,7 @@ for (let round = 0;  round < 5; round++) {
         // log to console for testing (will not be in final game)
     let playerSelection = getPlayerChoice();
     console.log(playerSelection);
+
 
     // compare variable playerSelection to variable computerSelection to determine winner of round
         // if player canceled prompt, say player aborted the game
@@ -74,5 +80,5 @@ for (let round = 0;  round < 5; round++) {
     
     // log to console for testing
     console.log(playRound());
-    
+
 }
