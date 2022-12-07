@@ -40,6 +40,7 @@ let playerSelection = getPlayerChoice();
 console.log(playerSelection);
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
+// need to write it so that the output string reflects the specific choices made; can brute force it but could probably find more elegant solution
 function playRound() {
     if (computerSelection === playerSelection) {
         console.log("It's a tie! You both picked the same thing!");
