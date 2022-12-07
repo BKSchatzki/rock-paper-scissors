@@ -12,20 +12,15 @@ function getComputerChoice() {
     }
 }
 
-// initialize variable computerSelection with value of function getComputerChoice
-    // log to console for testing (will not be in final game)
-let computerSelection = getComputerChoice();
-console.log(computerSelection);
-
 // prompt player for choice
-    // use while-loop to continually prompt player until proper choice is made
-    // if player cancels, return null and break
-    // if player inputs "Rock"," "Paper," or "Scissors," check if converted to lowercase the strings match "rock," paper," or "scissors"
-    // if true, return string, with only first letter capitalized
-    // if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
+// use while-loop to continually prompt player until proper choice is made
+// if player cancels, return null and break
+// if player inputs "Rock"," "Paper," or "Scissors," check if converted to lowercase the strings match "rock," paper," or "scissors"
+// if true, return string, with only first letter capitalized
+// if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
 function getPlayerChoice() {
     while(true) {
-    let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
+        let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
         if (playerInput === null) {
             return playerInput;
             break;
@@ -36,12 +31,17 @@ function getPlayerChoice() {
             playerInput.toLowerCase() === "scissors") {
                 return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
                 break;
-        } else {
-            alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
+            } else {
+                alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
+            }
         }
     }
-}
-
+    
+// initialize variable computerSelection with value of function getComputerChoice
+    // log to console for testing (will not be in final game)
+let computerSelection = getComputerChoice();
+console.log(computerSelection);
+    
 // initialize variable playerSelection with value of function getPlayerChoice
     // log to console for testing (will not be in final game)
 let playerSelection = getPlayerChoice();
