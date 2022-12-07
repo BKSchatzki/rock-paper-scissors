@@ -51,12 +51,12 @@ for (let round = 0;  round < 5; round++) {
     // initialize variable computerSelection with value of function getComputerChoice
         // log to console for testing (will not be in final game)
     let computerSelection = getComputerChoice();
-    console.log(computerSelection);
+    // console.log(computerSelection);
         
     // initialize variable playerSelection with value of function getPlayerChoice
         // log to console for testing (will not be in final game)
     let playerSelection = getPlayerChoice();
-    console.log(playerSelection);
+    // console.log(playerSelection);
 
     // compare variable playerSelection to variable computerSelection to determine winner of round
         // if player canceled prompt, say player aborted the game
@@ -85,11 +85,12 @@ for (let round = 0;  round < 5; round++) {
         }
     }
     
-    // log to console for testing
-    console.log(playRound());
+    // play the round
+    playRound();
 
     // add scoring tracker
         // check and say winner when one reaches three, then break the loop
+        // if no winner, announce a tie
         // TODO: add and honor singular or plural noun "point" in winner message
         // TODO: add unique message for each possible final result
     if (playerScore === 3) {
