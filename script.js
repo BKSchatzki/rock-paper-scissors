@@ -21,13 +21,16 @@ console.log(computerSelection);
 
 // declare function getPlayerChoice() and prompt player to type choice
 function getPlayerChoice() {
-    let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?")
+    let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
     // make case insensitive
     // if player selection isn't proper, reprompt, emphasizing three choices
-    if (playerInput === "Rock" || playerInput === "Paper" || playerInput === "Scissors") {
-        return playerInput;
+    if (
+        playerInput === "Rock" ||
+        playerInput === "Paper" ||
+        playerInput === "Scissors") {
+            return playerInput;
     } else {
-        alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'")
+        alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
     }
 }
 
@@ -37,8 +40,20 @@ let playerSelection = getPlayerChoice();
 console.log(playerSelection);
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
+function playRound() {
+    if (computerSelection === playerSelection) {
+        console.log("It's a tie! You both picked the same thing!");
+    } else if (
+        computerSelection === "Rock" && playerSelection === "Paper" ||
+        computerSelection === "Paper" && playerSelection === "Scissors" ||
+        computerSelection === "Scissors" && playerSelection === "Rock") {
+            console.log("You win! You picked the thing that beat the thing it picked!");
+    } else { // this isn't ideal, because as it stands if you enter gibberish it still outputs the string below
+        console.log("You lose! It picked the thing that beat the thing you picked!");
+    }
+}
 
-
-
+// log console for testing
+console.log(playRound());
 
 // write function called game(), calling playRound() inside of it and counting how many rounds played, as well as reporting on round victories and match victories
