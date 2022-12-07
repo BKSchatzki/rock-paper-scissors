@@ -43,14 +43,14 @@ console.log(playerSelection);
 // need to write it so that the output string reflects the specific choices made; can brute force it but could probably find more elegant solution
 function playRound() {
     if (computerSelection === playerSelection) {
-        console.log("It's a tie! You both picked the same thing!");
+        console.log(`It's a tie! You both picked ${playerSelection}!`);
     } else if (
         computerSelection === "Rock" && playerSelection === "Paper" ||
         computerSelection === "Paper" && playerSelection === "Scissors" ||
         computerSelection === "Scissors" && playerSelection === "Rock") {
-            console.log("You win! You picked the thing that beat the thing it picked!");
+            console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
     } else { // this isn't ideal, because as it stands if you enter gibberish it still outputs the string below
-        console.log("You lose! It picked the thing that beat the thing you picked!");
+        console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
     }
 }
 
