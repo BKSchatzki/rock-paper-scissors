@@ -25,6 +25,10 @@ function getPlayerChoice() {
     let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
     // make case insensitive
     // if player selection isn't proper, reprompt, emphasizing three choices
+        if (playerInput === null) {
+            return playerInput;
+            break;
+        }
         if (
             playerInput === "Rock" ||
             playerInput === "Paper" ||
@@ -44,7 +48,9 @@ console.log(playerSelection);
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
 function playRound() {
-    if (computerSelection === playerSelection) {
+    if (playerSelection === null) {
+        console.log("You aborted!");
+    } else if (computerSelection === playerSelection) {
         // use template literals to make result output responsive to selection
         console.log(`It's a tie! You both picked ${playerSelection}!`);
     } else if (
