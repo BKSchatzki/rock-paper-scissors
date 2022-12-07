@@ -42,6 +42,7 @@ function getPlayerChoice() {
 let computerScore;
 let playerScore;
 
+// set score variables to 0
 computerScore = 0;
 playerScore = 0;
 
@@ -57,7 +58,6 @@ for (let round = 0;  round < 5; round++) {
     let playerSelection = getPlayerChoice();
     console.log(playerSelection);
 
-
     // compare variable playerSelection to variable computerSelection to determine winner of round
         // if player canceled prompt, say player aborted the game
         // if variables are the same, say it's a tie and what was picked
@@ -65,23 +65,36 @@ for (let round = 0;  round < 5; round++) {
         // if computer wins, say so and what was picked
     function playRound() {
         if (playerSelection === null) {
-            console.log("You aborted!");
+            console.log("You aborted the round! The computer gets a point!");
+            computerScore += 1;
         } else if (computerSelection === playerSelection) {
-            console.log(`It's a tie! You both picked ${playerSelection}!`);
+            console.log(`It's a tie! You both picked ${playerSelection}! No points awarded this round.`);
         } else if (
             computerSelection === "Rock" && playerSelection === "Paper" ||
             computerSelection === "Paper" && playerSelection === "Scissors" ||
             computerSelection === "Scissors" && playerSelection === "Rock") {
                 console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
+                playerScore += 1;
         } else if ( 
             playerSelection === "Rock" && computerSelection === "Paper" ||
             playerSelection === "Paper" && computerSelection === "Scissors" ||
             playerSelection === "Scissors" && computerSelection === "Rock") {
                 console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
+                computerScore += 1;
         }
     }
     
     // log to console for testing
     console.log(playRound());
+
+    // add scoring tracker
+        // TODO: check and say winner when one reaches three
+    if (computerScore === playerScore) {
+        console.log(`You and the computer are tied at ${playerScore} apiece!`)
+    } else if (computerScore < playerScore) {
+        console.log(`You are ahead! The score is ${playerScore} to ${computerScore}.`)
+    } else if (playerScore < computerScore) {
+        console.log(`You are behind! The score is ${playerScore} to ${computerScore}.`)
+    }
 
 }
