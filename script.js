@@ -29,7 +29,7 @@ function getPlayerChoice() {
             return playerInput;
             break;
         }
-        if (
+        else if (
             playerInput === "Rock" ||
             playerInput === "Paper" ||
             playerInput === "Scissors") {
