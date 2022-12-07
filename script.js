@@ -40,16 +40,19 @@ let playerSelection = getPlayerChoice();
 console.log(playerSelection);
 
 // write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
-// need to write it so that the output string reflects the specific choices made; can brute force it but could probably find more elegant solution
 function playRound() {
     if (computerSelection === playerSelection) {
+        // use template literals to make result output responsive to selection
         console.log(`It's a tie! You both picked ${playerSelection}!`);
     } else if (
         computerSelection === "Rock" && playerSelection === "Paper" ||
         computerSelection === "Paper" && playerSelection === "Scissors" ||
         computerSelection === "Scissors" && playerSelection === "Rock") {
             console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
-    } else { // this isn't ideal, because as it stands if you enter gibberish it still outputs the string below
+    } else if ( // this isn't ideal, because as it stands if you enter gibberish it still outputs the string below
+        playerSelection === "Rock" && computerSelection === "Paper" ||
+        playerSelection === "Paper" && computerSelection === "Scissors" ||
+        playerSelection === "Scissors" && computerSelection === "Rock") {
         console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
     }
 }
