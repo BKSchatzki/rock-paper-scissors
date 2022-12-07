@@ -1,10 +1,8 @@
-// declare function getComputerChoice() to randomly return Rock, Paper, or Scissors
+// choose "Rock," "Paper," or "Scissors" for the computer
+    // use the variableRandom number and assigns the value of a random number between 0 and 1, multiplied by 3, rounded down
+    // output either 0, 1, or 2, which, using if-else statements return "Rock," "Paper," or "Scissors" respectively
 function getComputerChoice() {
-    // select random number between 0 and 1
-    // multiply result by 3
-    // round number down to integer, giving three possible values: 0, 1, and 2
     let randomNumber = Math.floor(Math.random() * 3);
-    // use if statements to return "Rock" for 0, "Paper" 1, and "Scissors" for 2
     if (randomNumber === 0) {
         return "Rock";
     }   else if (randomNumber === 1) {
@@ -14,17 +12,20 @@ function getComputerChoice() {
     }
 }
 
-// declare computerSelection variable and assign getComputerChoice() as value
+// initialize variable computerSelection with value of function getComputerChoice
+    // log to console for testing (will not be in final game)
 let computerSelection = getComputerChoice();
-// log console for testing
 console.log(computerSelection);
 
-// declare function getPlayerChoice() and prompt player to type choice
+// prompt player for choice
+    // use while-loop to continually prompt player until proper choice is made
+    // if player cancels, return null and break
+    // if player inputs "Rock"," "Paper," or "Scissors," return input and break
+    // if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
+    // TODO: make player input case-insensitive
 function getPlayerChoice() {
     while(true) {
     let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
-    // make case insensitive
-    // if player selection isn't proper, reprompt, emphasizing three choices
         if (playerInput === null) {
             return playerInput;
             break;
@@ -41,32 +42,33 @@ function getPlayerChoice() {
     }
 }
 
-// declare playerSeletion variable and assign getPlayerChoice() as value
+// initialize variable playerSelection with value of function getPlayerChoice
+    // log to console for testing (will not be in final game)
 let playerSelection = getPlayerChoice();
-// log console for testing
 console.log(playerSelection);
 
-// write function playRound() to play single round using playerSelection and computerSelection and return a string showing the result
+// compare variable playerSelection to variable computerSelection to determine winner of round
+    // if player canceled prompt, say player aborted the game
+    // if variables are the same, say it's a tie and what was picked
+    // if player wins, say so and what was picked
+    // if computer wins, say so and what was picked
 function playRound() {
     if (playerSelection === null) {
         console.log("You aborted!");
     } else if (computerSelection === playerSelection) {
-        // use template literals to make result output responsive to selection
         console.log(`It's a tie! You both picked ${playerSelection}!`);
     } else if (
         computerSelection === "Rock" && playerSelection === "Paper" ||
         computerSelection === "Paper" && playerSelection === "Scissors" ||
         computerSelection === "Scissors" && playerSelection === "Rock") {
             console.log(`You win! ${playerSelection} beats ${computerSelection}!`);
-    } else if ( // this isn't ideal, because as it stands if you enter gibberish it still outputs the string below
+    } else if ( 
         playerSelection === "Rock" && computerSelection === "Paper" ||
         playerSelection === "Paper" && computerSelection === "Scissors" ||
         playerSelection === "Scissors" && computerSelection === "Rock") {
-        console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
+            console.log(`You lose! ${computerSelection} beats ${playerSelection}!`);
     }
 }
 
-// log console for testing
+// log to console for testing
 console.log(playRound());
-
-// write function called game(), calling playRound() inside of it and counting how many rounds played, as well as reporting on round victories and match victories
