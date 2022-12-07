@@ -39,8 +39,11 @@ function getPlayerChoice() {
 
 // declare score variables
     // TODO: place inside function play to "Play again" if so desired
-let computerScore
-let playerScore
+let computerScore;
+let playerScore;
+
+computerScore = 0;
+playerScore = 0;
 
 for (let round = 0;  round < 5; round++) {
 
