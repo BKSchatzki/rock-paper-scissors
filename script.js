@@ -98,6 +98,12 @@ for (let round = 0;  round < 5; round++) {
     } else if (computerScore === 3) {
         console.log(`With 3 points, the computer wins the best of five. Your score is only ${playerScore}.`);
         break;
+    } else if (round === 4 && computerScore < playerScore) {
+        console.log(`That's five rounds done! You win ${playerScore} to ${computerScore}!`)
+    } else if (round === 4 && playerScore < computerScore) {
+        console.log(`And with five rounds, the computer wins ${computerScore} to ${playerScore}.`)
+    } else if (round === 4 && computerScore === playerScore) {
+        console.log(`That was inconclusive. After five rounds, the score is tied at ${playerScore} each.`)
     } else if (computerScore === playerScore) {
         console.log(`You and the computer are tied at ${playerScore} apiece!`);
     } else if (computerScore < playerScore) {
