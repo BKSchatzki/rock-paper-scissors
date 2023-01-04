@@ -1,6 +1,3 @@
-// choose "Rock," "Paper," or "Scissors" for the computer
-    // use the variableRandom number and assigns the value of a random number between 0 and 1, multiplied by 3, rounded down
-    // output either 0, 1, or 2, which, using if-else statements return "Rock," "Paper," or "Scissors" respectively
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     if (randomNumber === 0) {
@@ -12,47 +9,24 @@ function getComputerChoice() {
     }
 }
 
-// prompt player for choice
-// use while-loop to continually prompt player until proper choice is made
-// if player cancels, return null and break
-// if player inputs "Rock"," "Paper," or "Scissors," check if converted to lowercase the strings match "rock," paper," or "scissors"
-// if true, return string, with only first letter capitalized
-// if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
-function getPlayerChoice() {
-    const rock = document.getElementById("rock");
-    const paper = document.getElementById("paper");
-    const scissors = document.getElementById("scissors");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
 
-    rock.addEventListener("click", () => {return "Rock"; });
-    paper.addEventListener("click", () => {return "Paper"; });
-    scissors.addEventListener("click", () => {return "Scissors"; });
-}
+rock.addEventListener("click", () => {return "Rock"; });
+paper.addEventListener("click", () => {return "Paper"; });
+scissors.addEventListener("click", () => {return "Scissors"; });
 
-// declare score variables
-    // TODO: place inside function play to "Play again" if so desired
 let computerScore;
 let playerScore;
 
-// set score variables to 0
 computerScore = 0;
 playerScore = 0;
 
-// initialize variable computerSelection with value of function getComputerChoice
-    // log to console for testing (will not be in final game)
 let computerSelection = getComputerChoice();
-// console.log(computerSelection);
     
-// initialize variable playerSelection with value of function getPlayerChoice
-    // log to console for testing (will not be in final game)
 let playerSelection = getPlayerChoice();
-// console.log(playerSelection);
 
-// compare variable playerSelection to variable computerSelection to determine winner of round
-    // if player canceled prompt, say player aborted the game
-    // if variables are the same, say it's a tie and what was picked
-    // if player wins, say so and what was picked
-    // if computer wins, say so and what was picked
-    // increment score variable depending on who won
 function playRound() {
     if (playerSelection === null) {
         console.log("You aborted the round! The computer gets a point!");
@@ -74,5 +48,4 @@ function playRound() {
     }
 }
 
-// play the round
 playRound();
