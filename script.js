@@ -85,28 +85,3 @@ function playRound() {
 
 // play the round
 playRound();
-
-// add scoring tracker
-    // check and say winner when one reaches three, then break the loop
-    // if no winner, announce a tie
-    // TODO: add and honor singular or plural noun "point" in winner message
-    // TODO: add unique message for each possible final result
-if (playerScore === 3) {
-    console.log(`And with 3, you win the best-of-five! The computer's score is only ${computerScore}.`);
-    break;
-} else if (computerScore === 3) {
-    console.log(`With 3 points, the computer wins the best of five. Your score is only ${playerScore}.`);
-    break;
-} else if (round === 4 && computerScore < playerScore) {
-    console.log(`That's five rounds done! You win ${playerScore} to ${computerScore}!`)
-} else if (round === 4 && playerScore < computerScore) {
-    console.log(`And with five rounds, the computer wins ${computerScore} to ${playerScore}.`)
-} else if (round === 4 && computerScore === playerScore) {
-    console.log(`That was inconclusive. After five rounds, the score is tied at ${playerScore} each.`)
-} else if (computerScore === playerScore) {
-    console.log(`You and the computer are tied at ${playerScore} apiece!`);
-} else if (computerScore < playerScore) {
-    console.log(`You are ahead! The score is ${playerScore} to ${computerScore}.`);
-} else if (playerScore < computerScore) {
-    console.log(`You are behind! The score is ${playerScore} to ${computerScore}.`);
-}
