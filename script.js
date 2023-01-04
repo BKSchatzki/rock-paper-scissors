@@ -9,8 +9,12 @@ function getComputerChoice() {
     }
 }
 
+let playerScore = 0
+let computerScore = 0
+
 function playRound (playerSelection) {
     computerSelection = getComputerChoice();
+
     if (playerSelection === computerSelection) {
         document.getElementById("result").innerText =`It's a tie. You both picked ${playerSelection}.`;
     } else if (
@@ -18,8 +22,12 @@ function playRound (playerSelection) {
         (playerSelection === "Scissors" && computerSelection === "Paper") ||
         (playerSelection === "Paper" && computerSelection === "Rock")) {
         document.getElementById("result").innerText = `You win. ${playerSelection} beats ${computerSelection}.`;
+        playerScore++;
+        document.getElementById("playerScore").innerText = playerScore;
     } else {
         document.getElementById("result").innerText = `You lose. ${computerSelection} beats ${playerSelection}.`;
+        computerScore++;
+        document.getElementById("computerScore").innerText = computerScore;
     }
 }
 
