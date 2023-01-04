@@ -19,23 +19,14 @@ function getComputerChoice() {
 // if true, return string, with only first letter capitalized
 // if anything else is input, alert player to enter "Rock"," "Paper," or "Scissors" and repeat prompt
 function getPlayerChoice() {
-    while(true) {
-        let playerInput = prompt("Make your choice.", "Rock, Paper, or Scissors?");
-        if (playerInput === null) {
-            return playerInput;
-            break;
-        }
-        else if (
-            playerInput.toLowerCase() === "rock" ||
-            playerInput.toLowerCase() === "paper" ||
-            playerInput.toLowerCase() === "scissors") {
-                return playerInput.charAt(0).toUpperCase() + playerInput.slice(1).toLowerCase();
-                break;
-            } else {
-                alert("Please enter 'Rock,' 'Paper,' or 'Scissors.'");
-            }
-        }
-    }
+    const rock = document.getElementById("rock");
+    const paper = document.getElementById("paper");
+    const scissors = document.getElementById("scissors");
+
+    rock.addEventListener("click", () => {return "Rock"; });
+    paper.addEventListener("click", () => {return "Paper"; });
+    scissors.addEventListener("click", () => {return "Scissors"; });
+}
 
 // declare score variables
     // TODO: place inside function play to "Play again" if so desired
