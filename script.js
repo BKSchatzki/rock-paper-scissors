@@ -31,15 +31,16 @@ function playRound (playerSelection) {
 let playerScore = 0;
 let computerScore = 0;
 
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
+
+rockBtn.addEventListener("click", () => playRound("Rock"));
+paperBtn.addEventListener("click", () => playRound("Paper"));
+scissorsBtn.addEventListener("click", () => playRound("Scissors"));
+
 while (playerScore < 5 && computerScore < 5) {
     
-    const rockBtn = document.getElementById("rock");
-    const paperBtn = document.getElementById("paper");
-    const scissorsBtn = document.getElementById("scissors");
-    
-    rockBtn.addEventListener("click", () => playRound("Rock"));
-    paperBtn.addEventListener("click", () => playRound("Paper"));
-    scissorsBtn.addEventListener("click", () => playRound("Scissors"));
     
     if (playerScore === 5) {
         document.getElementById("result").innerText = "First to 5! You win!";
@@ -47,5 +48,5 @@ while (playerScore < 5 && computerScore < 5) {
     } else if (computerScore === 5) {
         document.getElementById("result").innerText = "Beaten to 5! You lose.";
         break;
-    } else break
+    }
 }
