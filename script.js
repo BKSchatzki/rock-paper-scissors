@@ -12,14 +12,14 @@ function getComputerChoice() {
 function playRound (playerSelection) {
     computerSelection = getComputerChoice();
     if (playerSelection === computerSelection) {
-        console.log(`It's a tie. You both picked ${playerSelection}.`);
+        document.getElementById("result").innerText =`It's a tie. You both picked ${playerSelection}.`;
     } else if (
         (playerSelection === "Rock" && computerSelection === "Scissors") ||
         (playerSelection === "Scissors" && computerSelection === "Paper") ||
         (playerSelection === "Paper" && computerSelection === "Rock")) {
-        console.log(`You win. ${playerSelection} beats ${computerSelection}.`);
+        document.getElementById("result").innerText = `You win. ${playerSelection} beats ${computerSelection}.`;
     } else {
-        console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
+        document.getElementById("result").innerText = `You lose. ${computerSelection} beats ${playerSelection}.`;
     }
 }
 
