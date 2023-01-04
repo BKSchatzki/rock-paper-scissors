@@ -9,10 +9,24 @@ function getComputerChoice() {
     }
 }
 
+function playRound (playerSelection) {
+    computerSelection = getComputerChoice();
+    if (playerSelection === computerSelection) {
+        console.log(`It's a tie. You both picked ${playerSelection}.`);
+    } else if (
+        (playerSelection === "Rock" && computerSelection === "Scissors") ||
+        (playerSelection === "Scissors" && computerSelection === "Paper") ||
+        (playerSelection === "Paper" && computerSelection === "Rock")) {
+        console.log(`You win. ${playerSelection} beats ${computerSelection}.`);
+    } else {
+        console.log(`You lose. ${computerSelection} beats ${playerSelection}.`);
+    }
+}
+
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
 
-rockBtn.addEventListener("click", () => console.log("Rock"));
-paperBtn.addEventListener("click", () => console.log("Paper"));
-scissorsBtn.addEventListener("click", () => console.log("Scissors"));
+rockBtn.addEventListener("click", () => playRound("Rock"));
+paperBtn.addEventListener("click", () => playRound("Paper"));
+scissorsBtn.addEventListener("click", () => playRound("Scissors"));
