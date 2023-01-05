@@ -43,7 +43,7 @@ function playGame (playerSelection) {
     }
 }
 
-// assign ids to variables
+// assign ids to button variables
 const rockBtn = document.getElementById("rock");
 const paperBtn = document.getElementById("paper");
 const scissorsBtn = document.getElementById("scissors");
@@ -52,4 +52,3 @@ const scissorsBtn = document.getElementById("scissors");
 rockBtn.addEventListener("click", () => playGame("Rock"));
 paperBtn.addEventListener("click", () => playGame("Paper"));
 scissorsBtn.addEventListener("click", () => playGame("Scissors"));
-
