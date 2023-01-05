@@ -9,6 +9,8 @@ function getComputerChoice() {
     }
 }
 
+let playerScore = 0;
+let computerScore = 0;
 
 function playRound (playerSelection) {
     computerSelection = getComputerChoice();
@@ -22,40 +24,35 @@ function playRound (playerSelection) {
         (playerSelection === "Scissors" && computerSelection === "Paper") ||
         (playerSelection === "Paper" && computerSelection === "Rock")) {
         document.getElementById("result").innerText = `You win. ${playerSelection} beats ${computerSelection}.`;
-        return playerWinRound = true;
+        playerWinRound = true;
     } else {
         document.getElementById("result").innerText = `You lose. ${computerSelection} beats ${playerSelection}.`;
-        return computerWinRound = true;
+        computerWinRound = true;
     }
 }
 
-let playerScore = 0;
-let computerScore = 0;
+const rockBtn = document.getElementById("rock");
+const paperBtn = document.getElementById("paper");
+const scissorsBtn = document.getElementById("scissors");
 
-while (playerScore < 5 && computerScore < 5) {
-    const rockBtn = document.getElementById("rock");
-    const paperBtn = document.getElementById("paper");
-    const scissorsBtn = document.getElementById("scissors");
-    
-    rockBtn.addEventListener("click", () => playRound("Rock"));
-    paperBtn.addEventListener("click", () => playRound("Paper"));
-    scissorsBtn.addEventListener("click", () => playRound("Scissors"));
-    
-    if (playerWinRound) {
-        playerScore++;
-        document.getElementById("playerScore").innerText = playerScore;
-    }
-    
-    if (computerWinRound) {
-        computerScore++;
-        document.getElementById("computerScore").innerText = computerScore;
-    }
+rockBtn.addEventListener("click", () => playRound("Rock"));
+paperBtn.addEventListener("click", () => playRound("Paper"));
+scissorsBtn.addEventListener("click", () => playRound("Scissors"));
 
-    if (playerScore === 5) {
-        document.getElementById("result").innerText = "First to 5! You win!";
-        break;
-    } else if (computerScore === 5) {
-        document.getElementById("result").innerText = "Beaten to 5! You lose.";
-        break;
-    }
+if (playerWinRound) {
+    playerScore++;
+    document.getElementById("playerScore").innerText = playerScore;
+}
+
+if (computerWinRound) {
+    computerScore++;
+    document.getElementById("computerScore").innerText = computerScore;
+}
+
+if (playerScore === 5) {
+    document.getElementById("result").innerText = "First to 5! You win!";
+    break;
+} else if (computerScore === 5) {
+    document.getElementById("result").innerText = "Beaten to 5! You lose.";
+    break;
 }
